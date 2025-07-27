@@ -48,7 +48,7 @@ section {
 
 /* Header & Navigation */
 header {
-     position: fixed;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -345,12 +345,12 @@ nav {
     background-color: var(--bg-color);
 }
 .profile-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex; /* CHANGED: from grid to flex */
+    flex-wrap: wrap; /* ADDED: allows cards to wrap to next line */
+    justify-content: center; /* ADDED: centers the cards */
     gap: 1.5rem;
     max-width: 1200px;
     margin: 2rem auto 0;
-    justify-content: center;
 }
 
 .profile-card {
@@ -364,6 +364,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    flex-basis: 220px; /* ADDED: gives each card a base width */
+    flex-grow: 1; /* ADDED: allows cards to grow and fill space */
 }
 
 .profile-card:hover {
