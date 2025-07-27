@@ -35,16 +35,20 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--accent-color);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
 section {
     padding: 6rem 5%;
+    text-align: center;
 }
 
 /* Header & Navigation */
 header {
-    position: fixed;
+     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -108,6 +112,16 @@ nav {
     width: 100%;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
 
 /* Hero Section */
 .hero {
@@ -116,7 +130,22 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://placehold.co/1920x1080/121212/121212?text=') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -176,20 +205,46 @@ nav {
     text-align: justify;
 }
 
+.resume-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-button:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.resume-button i {
+    margin-right: 8px;
+}
+
 /* Skills Section */
+.skills {
+    background-color: var(--bg-color);
+}
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
+    text-align: left;
 }
 
 .skill-category {
     background: var(--secondary-color);
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -199,11 +254,10 @@ nav {
 }
 
 .skill-category h3 {
-    color: var(--accent-color);
+    color: var(--text-color);
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 5px;
+    border-bottom: none;
+    display: block;
 }
 
 /* Projects Section */
@@ -215,7 +269,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
 }
 
 .card {
@@ -226,6 +280,7 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .card:hover {
@@ -285,17 +340,106 @@ nav {
     color: #fff;
 }
 
+/* Coding Profiles Section */
+.profiles {
+    background-color: var(--bg-color);
+}
+.profile-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    justify-content: center;
+}
+
+.profile-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.15);
+}
+
+.profile-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.profile-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-stat {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.profile-button {
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+    width: 80%;
+}
+
+.profile-button:hover {
+    background: var(--accent-hover);
+}
+
 /* Contact Section */
 .contact {
     text-align: center;
     padding: 6rem 5%;
+    background-color: var(--primary-color);
 }
 
 .contact p {
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     font-size: 1.1rem;
 }
+
+.contact-details {
+    margin-top: 2rem;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--accent-hover);
+}
+
+.contact-details i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
 
 /* Footer */
 footer {
@@ -323,20 +467,18 @@ footer {
 /* Animations */
 .fade-in {
     animation: fadeInAnimation 1s ease-in forwards;
-    /* The conflicting 'opacity: 0;' rule has been removed from here */
 }
 
-.scroll-fade {
+.anim-slide-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.scroll-fade.visible {
+.anim-slide-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 @keyframes fadeInAnimation {
     from { opacity: 0; transform: translateY(20px); }
@@ -349,9 +491,28 @@ footer {
         font-size: 2rem;
     }
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .nav-links {
-        display: none; /* Simple hiding for mobile, can be replaced with a hamburger menu */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+    .nav-links.active {
+        max-height: 300px; /* Adjust as needed */
+    }
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    .hamburger {
+        display: block;
     }
 }
