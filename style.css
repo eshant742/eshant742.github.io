@@ -50,6 +50,7 @@ header {
     left: 0;
     z-index: 1000;
     background: rgba(18, 18, 18, 0.8);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     backdrop-filter: blur(10px);
     transition: background 0.3s ease;
 }
@@ -322,7 +323,7 @@ footer {
 /* Animations */
 .fade-in {
     animation: fadeInAnimation 1s ease-in forwards;
-    opacity: 0;
+    /* The conflicting 'opacity: 0;' rule has been removed from here */
 }
 
 .scroll-fade {
