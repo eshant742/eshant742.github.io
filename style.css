@@ -518,3 +518,8 @@ footer {
         display: block;
     }
 }
+    /* override only on the last .profile-card (AtCoder) */
+.profiles .profile-card:last-child .profile-button {
+  width: auto;
+  /* or a fixed px width, e.g.: width: 200px; */
+}
