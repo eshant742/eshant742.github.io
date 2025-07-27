@@ -1,24 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-links a, .cta-button');
+    // --- Mobile Hamburger Menu ---
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    for (const link of navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // --- Smooth Scrolling & Close Mobile Menu ---
+    const allLinks = document.querySelectorAll('.nav-links a, .cta-button');
+
+    for (const link of allLinks) {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            const href = this.getAttribute('href');
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Adjust for fixed header height
-                    behavior: 'smooth'
-                });
+            // ONLY prevent default for internal anchor links
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+
+                // Close mobile menu on link click
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+
+                const targetElement = document.querySelector(href);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // Adjust for fixed header height
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     }
 
-    // Fade-in effect for sections on scroll
+    // --- Fade-in effect for sections on scroll ---
     const scrollFadeElements = document.querySelectorAll('.scroll-fade');
 
     const scrollObserver = new IntersectionObserver((entries, observer) => {
