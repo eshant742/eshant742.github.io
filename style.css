@@ -621,8 +621,17 @@ nav {
     color: var(--accent-color);
 }
 
+/* Stealth Links */
+.stealth-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-/* Footer */
+.stealth-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}/* Footer */
 footer {
     background: var(--primary-color);
     text-align: center;
