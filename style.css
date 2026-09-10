@@ -260,6 +260,77 @@ nav {
     display: block;
 }
 
+/* Experience Section */
+.experience {
+    background-color: var(--primary-color);
+}
+.experience-container {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.experience-item {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.1);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.experience-date {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.experience-company {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 1rem;
+}
+
+.experience-details {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.experience-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.experience-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
 /* Projects Section */
 .projects {
     background-color: var(--primary-color);
@@ -403,6 +474,43 @@ nav {
 
 .profile-button:hover {
     background: var(--accent-hover);
+}
+
+/* Achievements List */
+.achievements-list {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    text-align: left;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+.achievements-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.achievements-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #ddd;
+}
+
+.achievements-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.achievements-list strong {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 /* Contact Section */

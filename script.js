@@ -118,9 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    animatedElements.forEach((element, index) => {
-        // Add a slight delay to each element for a staggered effect
-        element.style.transitionDelay = `${index * 50}ms`;
+    animatedElements.forEach((element) => {
         scrollObserver.observe(element);
     });
 
